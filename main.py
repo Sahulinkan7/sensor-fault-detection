@@ -6,11 +6,8 @@
 import os,sys
 from sensor.logger import logging
 from sensor.exception import SensorException
-def div():
-    try:
-        logging.info("logging this message")
-        print(9/0)
-    except Exception as e:
-        raise SensorException(e,sys) from e
-    
-div()
+from sensor.entity.config_entity import DataIngestionConfig,TrainingPipelineConfig
+from sensor.pipeline.training_pipeline import TrainPipeline
+
+t=TrainPipeline()
+t.run_pipeline()
