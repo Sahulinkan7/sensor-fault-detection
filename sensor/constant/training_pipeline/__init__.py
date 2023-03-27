@@ -46,3 +46,14 @@ MODEL_TRAINER_TRAINED_MODEL_DIR: str = "trained_model"
 MODEL_TRAINER_TRAINED_MODEL_NAME: str = "model.pkl"
 MODEL_TRAINER_EXPECTED_SCORE: float = 0.6
 MODEL_TRAINER_OVER_FITTING_UNDER_FITTING_THRESHOLD: float = 0.05
+
+# Model evaluation related variables starting with MODEL_EVALUATION variable name 
+
+MODEL_EVALUATION_DIR_NAME: str ="model_evaluation"
+MODEL_EVALUATION_CHANGED_THRESHOLD_SCORE: str = 0.02
+MODEL_EVALUATION_REPORT_NAME: str = "evaluation_report.yaml"
+
+# Model pusher related variables starting with MODEL_PUSHER variable name
+
+MODEL_PUSHER_DIR_NAME: str = "model_pusher"
+MODEL_PUSHER_SAVED_MODEL_DIR: str = SAVED_MODEL_DIR

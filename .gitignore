@@ -129,3 +129,4 @@ dmypy.json
 .pyre/
 
 artifact
+saved_models/*
