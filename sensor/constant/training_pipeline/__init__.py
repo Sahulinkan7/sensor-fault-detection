@@ -13,7 +13,7 @@ TEST_FILE_NAME: str = "test.csv"
 
 PREPROCESSING_OBJECT_FILE_NAME = "preprocessing.pkl"
 MODEL_FILE_NAME = "model.pkl"
-SCHMA_FILE_PATH= os.path.join("config","schema.yaml")
+SCHEMA_FILE_PATH= os.path.join("config","schema.yaml")
 SCHEMA_DROP_COLUMNS="drop_columns"
 
 # DATA INGESTION related variables starting with DATA_INGESTION variable name

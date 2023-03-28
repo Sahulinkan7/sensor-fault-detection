@@ -5,6 +5,7 @@ import json
 from sensor.configuration.mongo_db_connection import MongoDBClient
 from sensor.constant.database import DATABASE_NAME
 from sensor.exception import SensorException
+from sensor.logger import logging
 import sys
 class SensorData:
     '''
@@ -26,6 +27,7 @@ class SensorData:
                 collection=self.mongo_client.database[collection_name]
             else:
                 collection=self.mongo_client[database_name][collection_name]
+            logging.info(f" getting data from the collection named : {collection}")
             df=pd.DataFrame(list(collection.find()))
             
             if "_id" in df.columns.to_list():

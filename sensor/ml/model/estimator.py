@@ -1,5 +1,6 @@
 from sensor.constant.training_pipeline import SAVED_MODEL_DIR,MODEL_FILE_NAME
 import os, sys
+from sensor.logger import logging
 class TargetValueMapping:
     def __init__(self):
         self.neg: int = 0
@@ -17,6 +18,7 @@ class SensorModel:
     
     def __init__(self,preprocessor,model):
         try:
+            logging.info(f" creating sensor model ")
             self.preprocessor = preprocessor
             self.model = model
         except Exception as e:
@@ -43,6 +45,7 @@ class ModelResolver:
             latest_timestamp = max(timestamps)
             
             latest_model_path = os.path.join(self.model_dir,f"{latest_timestamp}",MODEL_FILE_NAME)
+            logging.info(f"latest model present at path : {latest_model_path}")
             return latest_model_path
         
         except Exception as e:

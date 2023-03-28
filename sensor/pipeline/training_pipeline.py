@@ -22,41 +22,30 @@ class TrainPipeline:
         self.training_pipeline_config=TrainingPipelineConfig()
         
     def start_data_ingestion(self)->DataIngestionArtifact:
-        try:
-            logging.info(f"{'#'*20} Starting Data Ingestion {'#'*20}")
-            
+        try:            
             self.data_ingestion_config=DataIngestionConfig(training_pipeline_config=self.training_pipeline_config)
             data_ingestion=DataIngestion(data_ingestion_config=self.data_ingestion_config)
             data_ingestion_artifact=data_ingestion.initiate_data_ingestion()
-            logging.info(f"{'#'*20} Data Ingestion Completed and artifact : {data_ingestion_artifact} {'#'*20}")
             return data_ingestion_artifact
         except Exception as e:
             raise SensorException(e,sys) from e
         
     def start_data_validation(self,data_ingestion_artifact:DataIngestionArtifact)->DataValidationArtifact:
-        try:
-            logging.info(f"{'#'*20} Starting Data Validation {'#'*20}")
-            
+        try:            
             data_validation_config = DataValidationConfig(training_pipeline_config=self.training_pipeline_config)
             data_validation = DataValidation(data_ingestion_artifact=data_ingestion_artifact,
                                              data_validation_config=data_validation_config)
-            data_validation_artifact = data_validation.initiate_data_validation()
-            
-            logging.info(f" Data Validation artifact : {data_validation_artifact} ")
-            
+            data_validation_artifact = data_validation.initiate_data_validation()            
             return data_validation_artifact
         except Exception as e:
             raise SensorException(e,sys) from e
         
     def start_data_tansformation(self,data_validation_artifact: DataValidationArtifact)->DataTransformationArtifact:
         try:
-            logging.info(f"{'#'*10} Data Transformation Started {'#'*10}")
             data_transformation_config = DataTransformationConfig(training_pipeline_config=self.training_pipeline_config)
             data_transformation = DataTransformation(data_validation_artifact=data_validation_artifact,
                                                      data_transformation_config=data_transformation_config)
-            data_transformation_artifact = data_transformation.initiate_data_transformation()
-            logging.info(f"{'#'*10} Data Transformation completed and data transformation artifact : {data_transformation_artifact} {'#'*10}")
-            
+            data_transformation_artifact = data_transformation.initiate_data_transformation()            
             return data_transformation_artifact
         
         except Exception as e:
