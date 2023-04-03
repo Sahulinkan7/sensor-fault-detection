@@ -1,0 +1,47 @@
+/* Experiment history  related css style */
+
+.experiment-container
+{
+    margin:10px;
+    display: flex;
+    justify-content: center;
+}
+
+table{
+    background-color:  rgb(193, 201, 209);
+    border-collapse: collapse;
+    padding: 5px;
+    border-radius: 1em;
+    overflow: hidden;
+    
+}
+th{
+    background-color: black;
+    color:white;
+    text-align: center;
+    padding:3px;
+    height: 40px;
+    border-bottom: 5px white;
+}
+
+tr:hover{
+    text-transform: uppercase;
+    -ms-text-size-adjust: auto;
+}
+
+tr{
+    border-bottom: 2px white;
+    text-align: center;
+    padding: 30px;
+    height: 30px;
+    border: transparent;
+    
+}
+td{
+    padding:5px;
+}
+
+
+tr:nth-child(even){
+    background-color: whitesmoke;
+}

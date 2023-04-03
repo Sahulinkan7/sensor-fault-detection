@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% if msg %}
+
+<div class="train_container">
+    <h2> {{msg}} </h2>
+    <div class="train_form">
+        <form action="/train" method="post">
+            <label>Click below to start model Training</label>
+            <button class="disabled" type="submit" value="Start Model Training">Start Model Training</button>
+        </form>
+    </div>  
+
+</div>
+
+{% else %}
+
+<div class="train_container">
+    <div class="train_form">
+        <form action="/train" method="post">
+            <label>Click below to start model Training</label>
+            <button type="submit" value="Start Model Training">Start Model Training</button>
+        </form>
+    </div>  
+</div>
+
+{% endif %}
+
+{% endblock %}

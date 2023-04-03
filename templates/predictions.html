@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<div class="prediction_container">
+    <form action="/prediction" method="post" enctype="multipart/form-data">
+        <label>Please select your input file : </label>
+        <input type="file" name="upload_file" required><br>
+        <button type="submit" value="Upload">Upload</button>
+    </form>
+
+    <label>File must be in csv format. </label>
+</div>
+
+
+
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="experiment-container">
+    {% if context %}
+        {{context['experiments']|safe}}
+    {% else %}
+        <h2>Experiments not yet done </h2>
+    {% endif %}
+</div>
+
+{% endblock %}

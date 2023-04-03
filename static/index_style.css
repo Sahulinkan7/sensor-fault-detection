@@ -1,0 +1,27 @@
+.main-container{
+    display: flex;
+    justify-content:center;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;    
+}
+
+.flex-item-1{
+    width:70%;
+    height: 80%;
+    background-color: rgb(240, 238, 238);
+    padding: 10px;
+}
+
+.flex-item-1 p{
+    margin-top: 20px;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+}
+
+.flex-item-1 p a{
+    cursor: pointer;
+    color: blue;
+    text-decoration:aqua;
+
+}

@@ -1,13 +1,37 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title></title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link href="css/style.css" rel="stylesheet" />
-  </head>
-  <body>
-    <h1>Welcome to the Sensor defect detection page</h1>
-    <a href="/train">Click to Train</a>
-  </body>
-</html>
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="main-container">
+    <div class="flex-item-1">
+        <h3>Problem Statement : </h3>
+        <p>
+            The Air Pressure System (APS) is a critical component of a heavy-duty vehicle that 
+            uses compressed air to force a piston to provide pressure to the brake pads, slowing 
+            the vehicle down. The benefits of using an APS instead of a hydraulic system are the 
+            easy availability and long-term sustainability of natural air.
+        </p>
+        <p>
+            This is a Binary Classification problem, in which the affirmative class indicates that the 
+            failure was caused by a certain component of the APS, while the negative class 
+            indicates that the failure was caused by something else.
+        </p>
+        <br>
+        <h3>Solution Approach : </h3>
+        <p>
+            To predict whether a failure of a Scania Truck is related to the air pressure system or not.<br>
+            We are using the classical Machine learning approach like Data Exploration, Data Cleaning, 
+            Feature Engineering, Model Training and Model Evaluation and etc. We have experimented different
+            different algorithms while model training and tried to find the best model having the best accuracy among 
+            them.
+        </p>
+        <br>
+        <h4>Dataset link for this project </h4>
+        <p>
+            Dataset link : <a target=_blank href="https://www.kaggle.com/c/scania-truck-failures/data">click here</a>
+        </p>
+        
+    </div>
+</div>
+
+{% endblock %}

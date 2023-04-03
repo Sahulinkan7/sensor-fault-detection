@@ -1,0 +1,29 @@
+/* Prediction page css styles */
+
+.prediction_container{
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    padding: 25px;
+    justify-items:center;
+    flex-direction: column;
+    background-color: white;
+    margin-top: 50px;
+}
+.prediction_container>label{
+    color:black;
+}
+
+.prediction_container button{
+    padding: 15px;
+    width: 100%;
+    text-decoration: none;
+    border-radius: 0.5rem;
+    background-color:  #008CBA;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.submit{
+    width: 100%;
+}
+
