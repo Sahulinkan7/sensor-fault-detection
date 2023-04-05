@@ -171,7 +171,7 @@ class TrainPipeline(Thread):
                                                     start_time=TrainPipeline.experiment.start_time,
                                                     stop_time=stop_time,
                                                     execution_time=timedelta.total_seconds(stop_time-TrainPipeline.experiment.start_time),
-                                                    message = "Pipeline Inturrupted",
+                                                    message = "Trained model not better than best Model",
                                                     accuracy = model_trainer_artifact.train_metric_artifact.f1_score,
                                                     is_model_accepted=model_evaluation_artifact.is_model_accepted
                                                     )

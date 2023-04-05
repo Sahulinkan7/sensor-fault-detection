@@ -26,7 +26,7 @@ def train():
             message="Training Started"
             pipeline.start()
         else:
-            message = "Training already in progress "
+            message = "Training is already in progress "
         return render_template('train.html',msg=message)
     return render_template('train.html')
     

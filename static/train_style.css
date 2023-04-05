@@ -24,3 +24,7 @@
 .disabled{
     cursor: not-allowed;
 }
+
+.train_container > h2{
+    color: rgb(197, 43, 32);
+}
