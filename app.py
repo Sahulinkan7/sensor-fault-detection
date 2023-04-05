@@ -6,6 +6,8 @@ from sensor.utils.main_utils import load_object
 from sensor.logger import logging
 import pandas as pd
 from datetime import datetime
+
+from sensor.utils.main_utils import read_yaml_file
 import os
 
 PRED_DIR="predictions"
@@ -20,8 +22,8 @@ def index():
     
 @app.route('/train',methods=['GET','POST'])
 def train():
+    pipeline = TrainPipeline()
     if request.method=='POST':
-        pipeline = TrainPipeline()
         if not pipeline.experiment.running_status:
             message="Training Started"
             pipeline.start()
@@ -66,8 +68,19 @@ def experiments():
     except Exception as e:
         return str(e)
     
+    
+
+env_file_path=os.path.join(os.getcwd(),"env.yaml")
+
+def set_env_variable(env_file_path):
+    if os.getenv('MONGO_DB_URL',None) is None:
+        env_config = read_yaml_file(file_path=env_file_path)
+        os.environ['MONGO_DB_URL']=env_config['MONGO_DB_URL']
+        
+
 if __name__ == '__main__':
     try:
+        set_env_variable(env_file_path)
         app.run(debug=True)
     except Exception as e:
         logging.info(f"{e}")

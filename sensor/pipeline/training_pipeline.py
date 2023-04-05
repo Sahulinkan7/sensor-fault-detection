@@ -38,7 +38,7 @@ class TrainPipeline(Thread):
     def __init__(self):
         try:
             super().__init__(daemon=False,name="Train-pipeline-Thread")
-            self.training_pipeline_config=TrainingPipelineConfig()
+            self.training_pipeline_config=TrainingPipelineConfig(timestamp=datetime.now())
             self.s3_sync=S3sync()
         except Exception as e:
             raise SensorException(e,sys) from e
@@ -207,7 +207,7 @@ class TrainPipeline(Thread):
             raise SensorException(e,sys) from e
     
     @staticmethod       
-    def get_experiments_status(limit:int = 8) -> pd.DataFrame:
+    def get_experiments_status(limit:int = 6) -> pd.DataFrame:
         try:
             df = Experiment_save().read_experiments()
             limit= -1*limit
