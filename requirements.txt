@@ -7,4 +7,5 @@ dill
 certifi
 imblearn
 flask
+xgboost==1.6.2
 -e .
