@@ -4,6 +4,7 @@ scikit-learn
 PyYAML
 scipy
 dill
+certifi
 imblearn
 flask
 -e .
