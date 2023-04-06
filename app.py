@@ -5,7 +5,6 @@ from sensor.constant.training_pipeline import SAVED_MODEL_DIR
 from sensor.utils.main_utils import load_object
 from sensor.logger import logging
 import pandas as pd
-
 from datetime import datetime
 
 from sensor.utils.main_utils import read_yaml_file
