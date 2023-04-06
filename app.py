@@ -81,7 +81,7 @@ def set_env_variable(env_file_path):
 if __name__ == '__main__':
     try:
         set_env_variable(env_file_path)
-        app.run(port=APP_PORT,host=APP_HOST)
+        app.run(host=APP_HOST,port=APP_PORT)
     except Exception as e:
         logging.info(f"{e}")
         print(str(e))
