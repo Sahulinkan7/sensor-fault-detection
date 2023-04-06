@@ -8,6 +8,7 @@ import pandas as pd
 from datetime import datetime
 from sensor.utils.main_utils import read_yaml_file
 import os
+from sensor.constant.application import *
 
 PRED_DIR="predictions"
 app=Flask(__name__)
@@ -80,7 +81,7 @@ def set_env_variable(env_file_path):
 if __name__ == '__main__':
     try:
         set_env_variable(env_file_path)
-        app.run()
+        app.run(port=APP_PORT,host=APP_HOST)
     except Exception as e:
         logging.info(f"{e}")
         print(str(e))
